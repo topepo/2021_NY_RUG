@@ -26,7 +26,7 @@ background-color: #F9F8F3
 
 ### Max Kuhn (RStudio, PBC)
 
-### https://github.com/topepo/2021_11_HDSI_RUG
+### https://github.com/topepo/2021_NY_RUG
 
 ]
 
@@ -35,7 +35,7 @@ background-color: #F9F8F3
 
 The tidymodels framework is a collection of packages for modeling and machine learning using tidyverse principles.
 
-If you are getting started, we suggest taking a look at: 
+If you are getting started, we suggest taking a look at:
 
 
 .code70[
@@ -56,12 +56,12 @@ library(tidymodels)
 
 ```
 ## ✓ broom        0.7.9           ✓ recipes      0.1.17.9000
-## ✓ dials        0.0.10          ✓ rsample      0.1.0      
-## ✓ dplyr        1.0.7           ✓ tibble       3.1.6      
-## ✓ ggplot2      3.3.5           ✓ tidyr        1.1.4      
-## ✓ infer        1.0.0           ✓ tune         0.1.6.9001 
-## ✓ modeldata    0.1.1           ✓ workflows    0.2.4.9000 
-## ✓ parsnip      0.1.7.9003      ✓ workflowsets 0.1.0      
+## ✓ dials        0.0.10          ✓ rsample      0.1.0
+## ✓ dplyr        1.0.7           ✓ tibble       3.1.6
+## ✓ ggplot2      3.3.5           ✓ tidyr        1.1.4
+## ✓ infer        1.0.0           ✓ tune         0.1.6.9001
+## ✓ modeldata    0.1.1           ✓ workflows    0.2.4.9000
+## ✓ parsnip      0.1.7.9003      ✓ workflowsets 0.1.0
 ## ✓ purrr        0.3.4           ✓ yardstick    0.0.8
 ```
 
@@ -105,15 +105,15 @@ class: inverse, middle, center
 
 * &lt;span class="pkg"&gt;parsnip&lt;/span&gt; model documentation
 
- - There are now engine-specific pages for each model/engine combination. 
- - Dynamic based on loaded packages (this may change). 
+ - There are now engine-specific pages for each model/engine combination.
+ - Dynamic based on loaded packages (this may change).
  - We will update to include the new mode of "censored regression".
 
 
 ---
 # Default engines
 
-All model engines in &lt;span class="pkg"&gt;parsnip&lt;/span&gt; now have default engines. For example: 
+All model engines in &lt;span class="pkg"&gt;parsnip&lt;/span&gt; now have default engines. For example:
 
 
 ```r
@@ -121,8 +121,8 @@ args(linear_reg)
 ```
 
 ```
-## function (mode = "regression", engine = "lm", penalty = NULL, 
-##     mixture = NULL) 
+## function (mode = "regression", engine = "lm", penalty = NULL,
+##     mixture = NULL)
 ## NULL
 ```
 
@@ -132,8 +132,8 @@ args(decision_tree)
 ```
 
 ```
-## function (mode = "unknown", engine = "rpart", cost_complexity = NULL, 
-##     tree_depth = NULL, min_n = NULL) 
+## function (mode = "unknown", engine = "rpart", cost_complexity = NULL,
+##     tree_depth = NULL, min_n = NULL)
 ## NULL
 ```
 
@@ -164,14 +164,14 @@ There are now a set of S3 methods called `extract_*()` that are much better:
 
 * More specific selectors
 
-* New steps for sparse PCA analysis (in &lt;span class="pkg"&gt;embed&lt;/span&gt;), multi-choice dummy variables (&lt;span class="pkg"&gt;textrecipes&lt;/span&gt;) and more.  
+* New steps for sparse PCA analysis (in &lt;span class="pkg"&gt;embed&lt;/span&gt;), multi-choice dummy variables (&lt;span class="pkg"&gt;textrecipes&lt;/span&gt;) and more.
 
 
 ```r
 library(beans)
 library(embed)
 
-recipe(class ~ ., data = beans) %&gt;% 
+recipe(class ~ ., data = beans) %&gt;%
   step_pca(all_predictors())
 ```
 
@@ -182,14 +182,14 @@ recipe(class ~ ., data = beans) %&gt;%
 
 * More specific selectors
 
-* New steps for sparse PCA analysis (in &lt;span class="pkg"&gt;embed&lt;/span&gt;), multi-choice dummy variables (&lt;span class="pkg"&gt;textrecipes&lt;/span&gt;) and more.  
+* New steps for sparse PCA analysis (in &lt;span class="pkg"&gt;embed&lt;/span&gt;), multi-choice dummy variables (&lt;span class="pkg"&gt;textrecipes&lt;/span&gt;) and more.
 
 
 ```r
 library(beans)
 library(embed)
 
-recipe(class ~ ., data = beans) %&gt;% 
+recipe(class ~ ., data = beans) %&gt;%
 * step_pca(all_numeric_predictors())
 ```
 
@@ -200,14 +200,14 @@ recipe(class ~ ., data = beans) %&gt;%
 
 * More specific selectors
 
-* New steps for sparse PCA analysis (in &lt;span class="pkg"&gt;embed&lt;/span&gt;), multi-choice dummy variables (&lt;span class="pkg"&gt;textrecipes&lt;/span&gt;) and more.  
+* New steps for sparse PCA analysis (in &lt;span class="pkg"&gt;embed&lt;/span&gt;), multi-choice dummy variables (&lt;span class="pkg"&gt;textrecipes&lt;/span&gt;) and more.
 
 
 ```r
 library(beans)
 library(embed)
 
-recipe(class ~ ., data = beans) %&gt;% 
+recipe(class ~ ., data = beans) %&gt;%
 * step_pca(all_numeric_predictors(), keep_original_cols = TRUE)
 ```
 
@@ -219,14 +219,14 @@ recipe(class ~ ., data = beans) %&gt;%
 
 * More specific selectors
 
-* New steps for sparse PCA analysis (in &lt;span class="pkg"&gt;embed&lt;/span&gt;), multi-choice dummy variables (&lt;span class="pkg"&gt;textrecipes&lt;/span&gt;) and more. 
+* New steps for sparse PCA analysis (in &lt;span class="pkg"&gt;embed&lt;/span&gt;), multi-choice dummy variables (&lt;span class="pkg"&gt;textrecipes&lt;/span&gt;) and more.
 
 
 ```r
 library(beans)
 library(embed)
 
-recipe(class ~ ., data = beans) %&gt;% 
+recipe(class ~ ., data = beans) %&gt;%
 * step_pca_sparse_bayes(all_numeric_predictors(), keep_original_cols = TRUE)
 ```
 
@@ -240,17 +240,17 @@ class: inverse, middle, center
 ---
 # Case weights
 
-There is a lot of interest for this feature but it is deceivingly difficult: 
+There is a lot of interest for this feature but it is deceivingly difficult:
 
-* How do we resample? 
+* How do we resample?
 
-* Do we require case weights for performance metrics? 
+* Do we require case weights for performance metrics?
 
-* What to do about recipe steps that don't handle weights? 
+* What to do about recipe steps that don't handle weights?
 
 Answers are affected by the type of weights (e.g., frequency weights versus importance weights, etc.)
 
-The work is in-process and affects all of our core packages. 
+The work is in-process and affects all of our core packages.
 
 ---
 # Censored regression
@@ -259,20 +259,20 @@ Censoring is usually a characteristic of time-to-event data. For example:
 
 &gt; We know that the dog has been at the shelter for 10 days but is not yet adopted.
 
-In this case, the time-to-adoption is 10 and _censored_. 
+In this case, the time-to-adoption is 10 and _censored_.
 
-R is particularly strong in _survival analysis_ but 
+R is particularly strong in _survival analysis_ but
 
-* The quality of the packages is extremely uneven. 
-* Some of the core packages were written without regard to developers programming with them. 
-* User interfaces differ wildly. 
+* The quality of the packages is extremely uneven.
+* Some of the core packages were written without regard to developers programming with them.
+* User interfaces differ wildly.
 
-This is the _raison d'etre_ for tidymodels. 
+This is the _raison d'etre_ for tidymodels.
 
 ---
 # The censored package
 
-We add a new mode of `"censored regression"`: 
+We add a new mode of `"censored regression"`:
 
 
 ```r
@@ -285,20 +285,20 @@ library(censored)
 ```
 
 ```r
-sparse_cox &lt;- 
-  proportional_hazards(penalty = 0.01) %&gt;% 
-  set_engine("glmnet") %&gt;% 
+sparse_cox &lt;-
+  proportional_hazards(penalty = 0.01) %&gt;%
+  set_engine("glmnet") %&gt;%
   fit(Surv(time, status) ~ age + ph.ecog + strata(sex), data = lung[-(1:3),])
 
-time_pred &lt;- 
+time_pred &lt;-
   predict(sparse_cox, lung[1:3,], type = "survival", time = 1:1000)
 time_pred
 ```
 
 ```
 ## # A tibble: 3 × 1
-##   .pred               
-##   &lt;list&gt;              
+##   .pred
+##   &lt;list&gt;
 ## 1 &lt;tibble [1,000 × 2]&gt;
 ## 2 &lt;tibble [1,000 × 2]&gt;
 ## 3 &lt;tibble [1,000 × 2]&gt;
@@ -310,24 +310,24 @@ time_pred
 .pull-left[
 
 ```r
-time_pred %&gt;% 
-  mutate(sample = letters[1:3]) %&gt;% 
-  unnest(cols = .pred) %&gt;% 
+time_pred %&gt;%
+  mutate(sample = letters[1:3]) %&gt;%
+  unnest(cols = .pred) %&gt;%
   ggplot(
     aes(
-      x = .time, 
-      y = .pred_survival,  
+      x = .time,
+      y = .pred_survival,
       col = sample
     )
-  ) + 
+  ) +
   geom_step()
 ```
 ]
 .pull-right[
-  
+
 &lt;img src="images/surv-plot-1.svg" width="90%" style="display: block; margin: auto;" /&gt;
 
-] 
+]
 
 ---
 # Current model slate
@@ -350,13 +350,13 @@ Give us feedback at [`rstd.io/censored-feedback`](https://rstd.io/censored-feedb
 ---
 # Model operations
 
-Julia Silge is working on this and has an initial release of the &lt;span class="pkg"&gt;vetiver&lt;/span&gt; package on CRAN. 
+Julia Silge is working on this and has an initial release of the &lt;span class="pkg"&gt;vetiver&lt;/span&gt; package on CRAN.
 
-* Can deploy different types of models using the &lt;span class="pkg"&gt;pins&lt;/span&gt; package. 
+* Can deploy different types of models using the &lt;span class="pkg"&gt;pins&lt;/span&gt; package.
 
-* We will be adding features related to monitoring and other operations. 
+* We will be adding features related to monitoring and other operations.
 
-Devel version works with for `lm`, &lt;span class="pkg"&gt;xgboost&lt;/span&gt;, &lt;span class="pkg"&gt;caret&lt;/span&gt;, &lt;span class="pkg"&gt;mlr3&lt;/span&gt;, and tidymodels objects. 
+Devel version works with for `lm`, &lt;span class="pkg"&gt;xgboost&lt;/span&gt;, &lt;span class="pkg"&gt;caret&lt;/span&gt;, &lt;span class="pkg"&gt;mlr3&lt;/span&gt;, and tidymodels objects.
 
 ---
 # vetiver model storage
@@ -371,7 +371,7 @@ data(Sacramento, package = "modeldata")
 rf_spec &lt;- rand_forest(mode = "regression")
 rf_form &lt;- price ~ type + sqft + beds + baths
 
-rf_fit &lt;- 
+rf_fit &lt;-
     workflow(rf_form, rf_spec) %&gt;%
     fit(Sacramento)
 
@@ -380,14 +380,14 @@ vet_mod
 ```
 
 ```
-## 
-## ── sacramento_rf ─ &lt;butchered_workflow&gt; model for deployment 
+##
+## ── sacramento_rf ─ &lt;butchered_workflow&gt; model for deployment
 ## A ranger regression modeling workflow using 4 features
 ```
 
 
 ---
-# Version and share and deploy a model 
+# Version and share and deploy a model
 
 
 ```r
@@ -449,7 +449,7 @@ The tidymodels team: Davis Vaughan, Julia Silge, and Hanna Frick. Emil Hvitfeldt
 
 Special thanks for the other folks who contributed so much to tidymodels: Edgar Ruiz, Alison Hill, Desirée De Leon, and the tidyverse team.
 
-These slides were made with the [`xaringan`](https://bookdown.org/yihui/rmarkdown/xaringan.html) package and styled by Alison Hill. 
+These slides were made with the [`xaringan`](https://bookdown.org/yihui/rmarkdown/xaringan.html) package and styled by Alison Hill.
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

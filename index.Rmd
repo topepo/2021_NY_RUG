@@ -1,7 +1,7 @@
 ---
 title: "What's New and Upcoming in tidymodels"
 author: Max Kuhn (RStudio, PBC)
-slides: https://github.com/topepo/2021_11_HDSI_RUG
+slides: https://github.com/topepo/2021_NY_RUG
 output:
   xaringan::moon_reader:
     anchor_sections: FALSE
