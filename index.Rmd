@@ -319,7 +319,7 @@ Give us feedback at [`rstd.io/censored-feedback`](https://rstd.io/censored-feedb
 
 Julia Silge is working on this and has an initial release of the `r pkg(vetiver)` package on CRAN. 
 
-* Can deploy different types of models using the `r pkg(pins)` package. 
+* Can publish, version, and deploy different types of models using the `r pkg(pins)` and `r pkg(plumber)` packages.
 
 * We will be adding features related to monitoring and other operations. 
 
