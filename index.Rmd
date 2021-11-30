@@ -100,7 +100,7 @@ class: inverse, middle, center
 ---
 # Documentation
 
-* We now do quarterly blog posts at [`tidyverse.org\blog`](https://www.tidyverse.org/blog/)
+* We now do quarterly blog posts at [`tidyverse.org/blog`](https://www.tidyverse.org/blog/)
 
 * `TMwR` is nearly complete (and we are working with a publisher)
 
@@ -114,7 +114,7 @@ class: inverse, middle, center
 ---
 # Default engines
 
-All model engines in `r pkg(parsnip)` now have default engines. For example: 
+All model specifications in `r pkg(parsnip)` now have default engines. For example: 
 
 ```{r}
 args(linear_reg)
@@ -129,7 +129,7 @@ args(decision_tree)
 
 Previously, we had a smattering of `pull_*()` objects that could get a specific item from an object (e.g., `pull_workflow()`).
 
-There are now a set of S3 methods called `extract_*()` that are much better:
+There is now a set of S3 methods called `extract_*()` that are much better:
 
 .pull-left[
 * `extract_fit_engine()`
@@ -168,7 +168,7 @@ recipe(class ~ ., data = beans) %>%
 
 * More specific selectors
 
-* New steps for sparse PCA analysis (in `r pkg(embed)`), multi-choice dummy variables (`r pkg(textrecipes)`) and more.  
+* New steps for sparse PCA analysis (in `r pkg(embed)`), multi-choice dummy variables (`r pkg(textrecipes)`) and more  
 
 ```{r, eval = FALSE, highlight.col = "#ADD8E6"}
 library(beans)
@@ -263,6 +263,7 @@ library(censored)
 
 sparse_cox <- 
   proportional_hazards(penalty = 0.01) %>% 
+  set_mode("censored regression") %>% 
   set_engine("glmnet") %>% 
   fit(Surv(time, status) ~ age + ph.ecog + strata(sex), data = lung[-(1:3),])
 
@@ -403,7 +404,7 @@ knitr::include_graphics("images/survey-results.svg")
 
 Thanks for the invitation to speak today!
 
-The tidymodels team: Davis Vaughan, Julia Silge, and Hanna Frick. Emil Hvitfeldt starts on 2021/12/08.
+The tidymodels team: Davis Vaughan, Julia Silge, and Hannah Frick. Emil Hvitfeldt starts on 2021/12/08.
 
 Special thanks for the other folks who contributed so much to tidymodels: Edgar Ruiz, Alison Hill, Desirée De Leon, and the tidyverse team.
 
